@@ -45,9 +45,9 @@ public class UserRegistration {
     }
     static public void validPassword () {
         Scanner sc =  new Scanner(System.in);
-        System.out.println("Enter password: \n Should have at least one upper case");
+        System.out.println("Enter password: \n Should have at least one upper case and one numeric number");
         String password = sc.next();
-        Pattern p = Pattern.compile("^[A-Z]{1,}[a-zA-Z]{7,}$");
+        Pattern p = Pattern.compile("^(?=.*[0-9])(?=.*[A-Z]).{8,}$");
         Matcher matcher= p.matcher(password);
         boolean result = matcher.matches();
         if (result) {
