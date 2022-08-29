@@ -41,6 +41,20 @@ public class UserRegistration {
         else {
             System.out.println("Invalid Mobile Number");
         }
+        validPassword();
+    }
+    static public void validPassword () {
+        Scanner sc =  new Scanner(System.in);
+        System.out.println("Enter password");
+        String password = sc.next();
+        Pattern p = Pattern.compile("^[a-zA-Z]{1,8}$");
+        Matcher matcher= p.matcher(password);
+        boolean result = matcher.matches();
+        if (result) {
+            System.out.println("Valid Password");
+        } else {
+            System.out.println("Invalid Password");
+        }
     }
 }
 
